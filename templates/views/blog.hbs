@@ -1,0 +1,42 @@
+<div class="container text-center" >
+	<h2><span class="script-text">News & Updates</span></h2>
+</div>
+
+<div class="container marketing" style="padding-bottom: 100px; padding-top: 25px;">
+{{#if data.posts.results.length}}
+<div class="blog row">
+	<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+		<div data-ks-editable="{&quot;type&quot;:&quot;list&quot;,&quot;path&quot;:&quot;posts&quot;,&quot;singular&quot;:&quot;Post&quot;,&quot;plural&quot;:&quot;Posts&quot;,&quot;id&quot;:&quot;52fa69e7036f52084c914e25&quot;}" class="post">
+			{{#each data.posts.results}}
+
+
+			<article class="media">
+				<div class="media-left">
+					<a href="/blog/post/{{slug}}" itemprop="url">
+					<img src="http://res.cloudinary.com/panther-pit-crew/image/upload/c_fit,f_auto,h_80,w_80/v{{image.version}}/{{image.public_id}}.jpg" class="media-object"></a>
+				</div>
+				<div class="media-body">
+				<h3 class="media-heading">
+					<a href="/blog/post/{{slug}}" itemprop="url">{{title}}</a>
+				</h3>
+				<p class="text-muted text-small">
+					<time datetime="{{publishedDate}}" class="text-muted text-small">{{publishedDate}}</time>
+				</p>
+				<div itemprop="description">{{{content.brief}}}</div>
+				</div>
+
+				
+			</article>
+			{{/each}}
+		</div>
+	</div>
+</div>
+{{else}}
+<div class="jumbotron text-center">
+	<h3>There are no posts yet.</h3>
+</div>
+{{/if}}
+
+</div>
+
+

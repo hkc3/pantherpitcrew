@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Liberty Hill Panther Pit Crew</title>
+		<link href="/styles/site.min.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+
+		
+		{{!-- This file provides the default styling for the KeystoneJS Content Editor 
+			- only renders when user is logged in and admin--}}
+		{{{isAdminEditorCSS user}}}
+		
+		{{!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+		//- Safely remove this block if you are not targeting IE8 --}}
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" />
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" />
+		<![endif]-->
+		<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
+	</head>                
+    
+<body class="home">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <a class="navbar-brand" href="#">LH Panther Pit Crew</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/pictures">Pictures</a></li> 
+        <!--<li><a href="/calendar">Calendar</a></li>--> 
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/contact"><span class="glyphicon glyphicon-envelope"></span> Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+	<!-- /.navbar -->
+
+
+		<div id="body">
+			<!--
+				Flash messages allow you to display once-off status messages to users, e.g. form
+				validation errors, success messages, etc
+			-->
+			{{#if messages}}
+			<div id="flash-messages" class="container">
+				{{#if messages.info}}
+				<div class="alert alert-info">
+						{{{flashMessages messages.info}}}
+				</div>
+				{{/if}}
+				{{#if messages.success}}
+				<div class="alert alert-success">
+						{{{flashMessages messages.success}}}
+				</div>
+				{{/if}}
+				{{#if messages.warning}}
+				<div class="alert alert-warning">
+						{{{flashMessages messages.warning}}}
+				</div>
+				{{/if}}
+				{{#if messages.error}}
+				<div class="alert alert-danger">
+						{{{flashMessages messages.error}}}
+				</div>
+				{{/if}}
+			</div>
+			{{/if}}
+			<!-- The content block should contain the body of your template's content-->
+			{{{body}}}
+		</div>
+		<footer id="footer" >
+
+		<div class="footer1">
+			<div class="container">
+				<div class="row">
+									
+
+					<div class="col-md-3 widget">
+						<h3 class="widget-title">Connect with us</h3>
+						<div class="widget-body">
+							<p class="follow-me-icons">
+								<a href="mailto:Scott.Supak@ferguson.com"><i class="fa fa-envelope fa-2"></i></a>
+								<a href="https://www.facebook.com/LibertyHillPantherPitCrew"><i class="fa fa-facebook fa-2"></i></a>
+													
+							</p>
+							<br/>
+						</div>
+					</div>
+					
+					<div class="col-md-9 widget">
+						<h3 class="widget-title">About The Panther Pit Crew</h3>
+						<div class="widget-body">
+							We are here to provide financial support to youth organizations within Liberty Hill by promoting fundraising events that enhance a groups ability to participate effectively in all activities that promote student awareness and well being. We will achieve this by growing membership, (individual and business) and gaining awareness within the community.
+						</div>
+					</div>
+
+				</div> 
+			</div>
+		</div>
+
+			</div>
+		</div>
+
+	</footer>	
+		{{!--
+			//- jQuery 1.11.1 is included by default, and required by both Bootstrap
+			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
+			//- you can upgrade to 2.1.1 (also bundled) for better performance.
+		--}}
+		<script src="/js/lib/jquery/jquery-1.11.1.min.js"></script>
+		{{!--
+			//- Customise which Bootstrap javascript files are served by including
+			//- them specifically here, instead of bootstrap-3.2.0.min.js
+		--}}
+		<script src="/js/lib/bootstrap/bootstrap-3.2.0.min.js"></script>
+        <script src="/js/lib/invoke.js"></script>
+		{{{isAdminEditorJS user}}}
+        
+	</body>
+</html>
