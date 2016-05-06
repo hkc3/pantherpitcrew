@@ -16,7 +16,7 @@ keystone.init({
 	'brand': 'pantherpitcrew',
 	'less': 'public',
 	'static': 'public',
-	'favicon': 'favicon.ico',
+	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'mongo': (keystone.get('env') == 'production') ? 'mongodb://107.170.29.244:27017/pantherpitcrew' : 'mongodb://127.0.0.1:27017/pantherpitcrew',
 	'view engine': 'hbs',
