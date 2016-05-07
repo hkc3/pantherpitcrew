@@ -1,28 +1,17 @@
-<div class="container" >
-	<h1>Gallery</h1>
-</div>
-<div class="container" style="padding-bottom: 100px; padding-top: 25px;">
+<div class="container" style="padding-bottom: 100px; padding-top: 25px;">	
+<div class="row">
 	<!-- if galleries -->
-	{{#if galleries}}
+		{{#if galleries}}
 		{{#each galleries}}
-		<h2>{{name}}
-			<div class="pull-right text-muted">19th May 2014</div>
-		</h2>
-		<div class="row gallery-images">
-				{{#if heroImage}}
-				<div class="col-sm-4 col-md-4 gallery-image">
-					<img src="{{cloudinaryUrl heroImage width='680' height='680'}}" class="img-rounded">
-				</div>
-				{{/if}}
-				<div class="col-sm-8 col-md-8">
-					<div class="row">
-						{{#each images}}
-						<div class="col-xs-4 col-sm-4 col-md-3 gallery-image">
-							<img src="{{cloudinaryUrl width='300' height='300'}}" class="img-rounded">
-						</div>
-						{{/each}}
-					</div>
-				</div>
+    <div class="col-lg-12">
+        <h1 class="page-header">Pictures</h1>
+					{{#each images}}
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            	<a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="" data-caption="" data-image="{{cloudinaryUrl width='500' height='500'}}" data-target="#image-gallery">
+                <img class="img-responsive" src="{{cloudinaryUrl}}" alt="Short alt text">
+            	</a>
+        		</div>
+        		{{/each}}    
 		</div>
 		{{/each}}
 	{{else}}
@@ -32,4 +21,34 @@
 	<p>&nbsp;</p>
 	<p>&nbsp;</p>
 	{{/if}}
+</div>			
 </div>
+
+<div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="image-gallery-title"></h4>
+            </div>
+            <div class="modal-body">
+                <img id="image-gallery-image" class="img-responsive" src="">
+            </div>
+            <div class="modal-footer">
+
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-primary" id="show-previous-image">Previous</button>
+                </div>
+
+                <div class="col-md-6 text-justify" id="image-gallery-caption">
+                    This text will be overwritten by jQuery
+                </div>
+
+                <div class="col-md-2">
+                    <button type="button" id="show-next-image" class="btn btn-default">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

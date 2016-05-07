@@ -1,15 +1,16 @@
 var keystone = require('keystone');
+var Gallery = keystone.list('Gallery');
 
-exports = module.exports = function(req, res) {
-	
-	var view = new keystone.View(req, res),
-		locals = res.locals;
-	
-	// locals.section is used to set the currently selected
-	// item in the header navigation.
+exports = module.exports = function (req, res) {
+
+	var view = new keystone.View(req, res);
+	var locals = res.locals;
+
 	locals.section = 'gallery';
-	
+
+	view.query('galleries', Gallery.model.find().sort('sortOrder'));
+
 	// Render the view
 	view.render('gallery', {layout: 'internal'});
-	
-};
+
+}
